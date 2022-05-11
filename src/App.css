@@ -47,10 +47,113 @@ header nav .left {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 }
 
 header nav .left ul {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header nav .right img {
+  width: 45px;
+}
+
+.core {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.description p.pre {
+  color: var(--orange);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.description h1 {
+  color: var(--vd-blue);
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.description p.desc {
+  color: var(--d-grayish-blue);
+  font-weight: 500;
+}
+
+.description s {
+  color: var(--grayish-blue);
+}
+
+.description .price .main-tag {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.description .price .main-tag p:first-of-type {
+  color: var(--vd-blue);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.description .price .main-tag p:last-of-type {
+  color: var(--orange);
+  background-color: var(--pale-orange);
+}
+
+.description .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.description .buttons .amount {
+  display: flex;
+  align-items: center;
+}
+
+.description .buttons .add-to-cart {
+  padding: 10px 30px;
+  background-color: var(--orange);
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.description .buttons .add-to-cart svg path {
+  fill: #fff;
+}
+
+.gallery {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery .image img {
+  height: 450px;
+}
+
+.gallery .thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery .thumbnails img {
+  height: 100px;
 }

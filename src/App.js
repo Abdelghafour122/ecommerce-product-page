@@ -11,7 +11,7 @@ function App() {
         <Gallery />
         <Description />
       </section>
-      <footer class="attribution">
+      <footer className="attribution">
         Challenge by{" "}
         <a
           href="https://www.frontendmentor.io?ref=challenge"
