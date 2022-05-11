@@ -1,8 +1,16 @@
 import "./App.css";
+import Navbar from "./Components/Navbar";
+import Gallery from "./Components/Gallery";
+import Description from "./Components/Description";
 
 function App() {
   return (
     <main className="App">
+      <Navbar />
+      <section className="core">
+        <Gallery />
+        <Description />
+      </section>
       <footer class="attribution">
         Challenge by{" "}
         <a
