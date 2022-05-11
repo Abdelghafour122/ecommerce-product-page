@@ -20,6 +20,37 @@ body {
   font-family: Kumbh Sans;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  background-color: unset;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .left ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
