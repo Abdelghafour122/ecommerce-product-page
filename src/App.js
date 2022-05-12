@@ -1,15 +1,33 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Gallery from "./Components/Gallery";
 import Description from "./Components/Description";
 
 function App() {
+  const [quant, setQuant] = useState(0);
+  const [orderedQuant, setOrderedQuant] = useState(0);
+
+  const addQuant = () => {
+    setQuant(quant + 1);
+    console.log(quant);
+  };
+  const removeQuant = () => {
+    setQuant(quant - 1);
+    console.log(quant);
+  };
+
   return (
     <main className="App">
-      <Navbar />
+      <Navbar onQuant={orderedQuant} />
       <section className="core">
         <Gallery />
-        <Description />
+        <Description
+          onQuant={quant}
+          onAdd={addQuant}
+          onRemove={removeQuant}
+          onSetOrderedQuant={setOrderedQuant}
+        />
       </section>
       <footer className="attribution">
         Challenge by{" "}

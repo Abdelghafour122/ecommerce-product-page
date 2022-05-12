@@ -157,3 +157,13 @@ header nav .right img {
 .gallery .thumbnails img {
   height: 100px;
 }
+
+.MuiBadge-badge {
+  background-color: hsl(26, 100%, 55%);
+  font-family: inherit;
+  font-weight: 700;
+}
+.MuiBadge-standard {
+  font-family: inherit;
+  font-weight: 700;
+}
