@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import BackdropGallery from "./BackdropGallery";
+
 import prod1 from "../Pictures/image-product-1.jpg";
 import prod2 from "../Pictures/image-product-2.jpg";
 import prod3 from "../Pictures/image-product-3.jpg";
@@ -14,14 +16,33 @@ const THUMBS = [thumb1, thumb2, thumb3, thumb4];
 
 const Gallery = () => {
   const [currentImage, setCurrentImage] = useState(prod1);
+  const [currentPassedImage, setCurrentPassedImage] = useState(prod1);
+
+  const [open, setOpen] = useState(false);
   const handleClick = (index) => {
     setCurrentImage(IMAGES[index]);
   };
+  const handleToggle = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    setCurrentPassedImage(currentImage);
+  }, [currentImage]);
+
   return (
     <section className="gallery">
       <div className="image">
-        <img src={currentImage} alt="product-1" />
+        <img src={currentImage} alt="product-1" onClick={handleToggle} />
       </div>
+      <BackdropGallery
+        handleClose={handleClose}
+        open={open}
+        currentPassedImage={currentPassedImage}
+      />
       <div className="thumbnails">
         {THUMBS.map((th, index) => {
           return (
