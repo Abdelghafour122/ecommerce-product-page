@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import { Container } from "@mui/material";
 import Navbar from "./Components/Navbar";
 import Gallery from "./Components/Gallery";
 import Description from "./Components/Description";
@@ -19,16 +20,18 @@ function App() {
 
   return (
     <main className="App">
-      <Navbar onQuant={orderedQuant} />
-      <section className="core">
-        <Gallery />
-        <Description
-          onQuant={quant}
-          onAdd={addQuant}
-          onRemove={removeQuant}
-          onSetOrderedQuant={setOrderedQuant}
-        />
-      </section>
+      <Container component="section">
+        <Navbar onQuant={orderedQuant} />
+        <section className="core">
+          <Gallery />
+          <Description
+            onQuant={quant}
+            onAdd={addQuant}
+            onRemove={removeQuant}
+            onSetOrderedQuant={setOrderedQuant}
+          />
+        </section>
+      </Container>
       <footer className="attribution">
         Challenge by{" "}
         <a

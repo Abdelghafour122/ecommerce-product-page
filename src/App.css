@@ -27,6 +27,11 @@ button {
   background-color: unset;
 }
 
+.selected {
+  filter: grayscale(0.5);
+  border: 2px solid var(--orange);
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -41,6 +46,8 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 30px 0;
+  border-bottom: 1px solid grey;
 }
 
 header nav .left {
@@ -54,10 +61,91 @@ header nav .left ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
+}
+
+header nav .left ul button {
+  padding: 0;
+  font-size: 16px;
+}
+
+header nav .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  z-index: 998;
 }
 
 header nav .right img {
   width: 45px;
+  cursor: pointer;
+}
+
+header nav .right svg {
+  cursor: pointer;
+}
+
+header nav .right .cart {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-75%);
+  box-shadow: 5px 5px 5px 5px #000;
+  z-index: 999;
+  background-color: #fff;
+  width: 320px;
+}
+header nav .right .cart .head {
+  display: flex;
+  align-items: flex-start;
+}
+header nav .right .cart .head p {
+  padding: 10px;
+  margin: 0;
+}
+header nav .right .cart hr {
+  margin: 0;
+}
+
+header nav .right .cart .cart-content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav .right .cart .product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+header nav .right .cart .product .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+header nav .right .cart .product .info > p {
+  margin: 0;
+}
+
+header nav .right .cart .product .delete-button img {
+  height: 20px;
+  width: 16px;
+}
+
+header nav .right .cart button.checkout {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: var(--orange);
+  width: 100%;
 }
 
 .core {
@@ -142,20 +230,25 @@ header nav .right img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .gallery .image img {
-  height: 450px;
+  height: 415px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .gallery .thumbnails {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .gallery .thumbnails img {
-  height: 100px;
+  height: 90px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .MuiBadge-badge {

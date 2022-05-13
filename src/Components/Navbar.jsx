@@ -3,6 +3,8 @@ import menu from "../Pictures/icon-menu.svg";
 import logo from "../Pictures/logo.svg";
 import avatar from "../Pictures/image-avatar.png";
 import { Badge } from "@mui/material";
+import Product from "./Product";
+import Cart from "./Cart";
 
 const Navbar = ({ onQuant }) => {
   return (
@@ -55,6 +57,7 @@ const Navbar = ({ onQuant }) => {
             </svg>
           </Badge>
           <img src={avatar} alt="img-avatar" />
+          <Cart />
         </div>
       </nav>
     </header>
