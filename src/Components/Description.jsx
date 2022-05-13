@@ -24,7 +24,6 @@ const Description = ({ onQuant, onAdd, onRemove, onSetOrderedQuant }) => {
           className="add-to-cart"
           onClick={() => {
             onSetOrderedQuant(onQuant);
-            console.log("first");
           }}
         >
           <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">

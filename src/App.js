@@ -11,17 +11,20 @@ function App() {
 
   const addQuant = () => {
     setQuant(quant + 1);
-    console.log(quant);
-  };
-  const removeQuant = () => {
-    setQuant(quant - 1);
-    console.log(quant);
   };
 
+  const removeQuant = () => {
+    setQuant(quant - 1);
+  };
+
+  const resetQuant = () => {
+    setQuant(0);
+    setOrderedQuant(0);
+  };
   return (
     <main className="App">
       <Container component="section">
-        <Navbar onQuant={orderedQuant} />
+        <Navbar onOrderedQuant={orderedQuant} onReset={resetQuant} />
         <section className="core">
           <Gallery />
           <Description

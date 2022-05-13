@@ -83,6 +83,11 @@ header nav .right img {
   cursor: pointer;
 }
 
+header nav .right img.avatar:hover {
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+}
+
 header nav .right svg {
   cursor: pointer;
 }
