@@ -18,12 +18,37 @@ const IMAGES = [prod1, prod2, prod3, prod4];
 const THUMBS = [thumb1, thumb2, thumb3, thumb4];
 const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
   const [backdropImage, setBackdropImage] = useState(currentPassedImage);
+  const [currentPassedImageIndex, setCurrentPassedImageIndex] = useState(1);
+
   useEffect(() => {
     setBackdropImage(currentPassedImage);
-    console.log("ttttt");
+    IMAGES.forEach((imgg, index) => {
+      imgg === currentPassedImage && setCurrentPassedImageIndex(index);
+    });
   }, [currentPassedImage]);
+
   const handleClick = (index = null) => {
     setBackdropImage(IMAGES[index]);
+  };
+
+  const handleIncrement = () => {
+    if (currentPassedImageIndex === IMAGES.length - 1) {
+      setBackdropImage(IMAGES[0]);
+      setCurrentPassedImageIndex(0);
+    } else {
+      setBackdropImage(IMAGES[currentPassedImageIndex + 1]);
+      setCurrentPassedImageIndex(currentPassedImageIndex + 1);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (currentPassedImageIndex === 0) {
+      setBackdropImage(IMAGES[IMAGES.length - 1]);
+      setCurrentPassedImageIndex(IMAGES.length - 1);
+    } else {
+      setBackdropImage(IMAGES[currentPassedImageIndex - 1]);
+      setCurrentPassedImageIndex(currentPassedImageIndex - 1);
+    }
   };
 
   return (
@@ -47,6 +72,7 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
           <IconButton
             className="icon-button-prev"
             disableRipple
+            onClick={handleDecrement}
             sx={{
               height: "42px",
               width: "42px",
@@ -58,6 +84,7 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
           <IconButton
             className="icon-button-next"
             disableRipple
+            onClick={handleIncrement}
             sx={{
               height: "42px",
               width: "42px",
