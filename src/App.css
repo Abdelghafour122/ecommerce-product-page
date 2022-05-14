@@ -32,6 +32,18 @@ button {
   border: 2px solid var(--orange);
 }
 
+@media (min-width: 1199px) {
+  .hide-in-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .hide-in-mobile {
+    display: none;
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -47,7 +59,7 @@ header nav {
   align-items: center;
   justify-content: space-between;
   padding: 30px 0;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid var(--grayish-blue);
 }
 
 header nav .left {
@@ -66,7 +78,7 @@ header nav .left ul {
 
 header nav .left ul button {
   padding: 0;
-  font-size: 16px;
+  font-size: var(--p-fs);
 }
 
 header nav .right {
@@ -254,6 +266,35 @@ header nav .right .cart button.checkout {
   height: 90px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.gallery .backdrop .backdrop-content {
+  width: 415px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery .backdrop .backdrop-content .image {
+  position: relative;
+}
+
+.gallery .backdrop-content .image .icon-button-prev {
+  position: absolute;
+  left: -21px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gallery .backdrop-content .image .icon-button-next {
+  position: absolute;
+  right: -21px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery .backdrop .thumbnails img {
+  height: 75px;
 }
 
 .MuiBadge-badge {

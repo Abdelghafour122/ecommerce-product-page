@@ -10,6 +10,10 @@ import thumb2 from "../Pictures/image-product-2-thumbnail.jpg";
 import thumb3 from "../Pictures/image-product-3-thumbnail.jpg";
 import thumb4 from "../Pictures/image-product-4-thumbnail.jpg";
 
+import CloseIcon from "./Icons/CloseIcon";
+import PreviousIcon from "./Icons/PreviousIcon";
+import NextIcon from "./Icons/NextIcon";
+
 const IMAGES = [prod1, prod2, prod3, prod4];
 const THUMBS = [thumb1, thumb2, thumb3, thumb4];
 const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
@@ -24,43 +28,61 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
 
   return (
     <Backdrop
+      className="backdrop"
       sx={{
         color: "#fff",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
         zIndex: (theme) => theme.zIndex.drawer + 1,
-        display: "flex",
-        flexDirection: "column",
       }}
       open={open}
     >
-      <IconButton
-        onClick={handleClose}
-        sx={{ color: "#fff", bgcolor: "transparent" }}
-      >
-        <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
-            fill="#fff"
-            fillRule="evenodd"
-          />
-        </svg>
-      </IconButton>
-      <div className="image">
-        <img src={backdropImage} alt="selected-product" />
-      </div>
-      <div className="thumbnails">
-        {THUMBS.map((th, index) => {
-          return (
-            <img
-              key={index}
-              src={th}
-              alt="product-1"
-              onClick={() => {
-                handleClick(index);
-              }}
-            />
-          );
-        })}
-      </div>
+      <section className="backdrop-content">
+        <IconButton
+          onClick={handleClose}
+          sx={{ color: "#fff", bgcolor: "transparent", alignSelf: "flex-end" }}
+        >
+          <CloseIcon />
+        </IconButton>
+        <div className="image">
+          <IconButton
+            className="icon-button-prev"
+            disableRipple
+            sx={{
+              height: "42px",
+              width: "42px",
+              bgcolor: "#fff",
+            }}
+          >
+            <PreviousIcon />
+          </IconButton>
+          <IconButton
+            className="icon-button-next"
+            disableRipple
+            sx={{
+              height: "42px",
+              width: "42px",
+              bgcolor: "#fff",
+            }}
+          >
+            <NextIcon />
+          </IconButton>
+          <img src={backdropImage} alt="selected-product" />
+        </div>
+        <div className="thumbnails">
+          {THUMBS.map((th, index) => {
+            return (
+              <img
+                key={index}
+                src={th}
+                alt="product-1"
+                onClick={() => {
+                  handleClick(index);
+                }}
+              />
+            );
+          })}
+        </div>
+      </section>
     </Backdrop>
   );
 };
