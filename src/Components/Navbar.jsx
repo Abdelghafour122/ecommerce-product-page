@@ -15,23 +15,25 @@ const Navbar = ({ onOrderedQuant, onReset }) => {
             <img className="hide-in-desktop" src={menu} alt="icon-menu" />
             <img src={logo} alt="logo" />
           </div>
-          <ul className="hide-in-mobile">
-            <li>
-              <button>Collections</button>
-            </li>
-            <li>
-              <button>Men</button>
-            </li>
-            <li>
-              <button>Women</button>
-            </li>
-            <li>
-              <button>About</button>
-            </li>
-            <li>
-              <button>Contact</button>
-            </li>
-          </ul>
+          <div className="links hide-in-mobile">
+            <ul>
+              <li>
+                <button>Collections</button>
+              </li>
+              <li>
+                <button>Men</button>
+              </li>
+              <li>
+                <button>Women</button>
+              </li>
+              <li>
+                <button>About</button>
+              </li>
+              <li>
+                <button>Contact</button>
+              </li>
+            </ul>
+          </div>
         </section>
         <div className="right">
           <IconButton
