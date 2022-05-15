@@ -23,7 +23,7 @@ function App() {
   };
   return (
     <main className="App">
-      <Container component="section">
+      <Container component="section" maxWidth={"lg"}>
         <Navbar onOrderedQuant={orderedQuant} onReset={resetQuant} />
         <section className="core">
           <Gallery />

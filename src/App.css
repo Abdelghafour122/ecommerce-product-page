@@ -32,13 +32,13 @@ button {
   border: 2px solid var(--orange);
 }
 
-@media (min-width: 575px) {
+@media (min-width: 769px) {
   .hide-in-desktop {
     display: none;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   .hide-in-mobile {
     display: none;
   }
@@ -114,6 +114,19 @@ header nav .right .cart {
   background-color: #fff;
   width: 320px;
 }
+@media (max-width: 768px) {
+  header nav .right .cart {
+    position: absolute;
+    top: calc(100% + 30px + 20px);
+    left: 0;
+    transform: translateX(-80%);
+    box-shadow: 5px 5px 5px 5px #000;
+    z-index: 999;
+    background-color: #fff;
+    width: 80vw;
+  }
+}
+
 header nav .right .cart .head {
   display: flex;
   align-items: flex-start;
@@ -169,6 +182,11 @@ header nav .right .cart button.checkout {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .core {
+    flex-direction: column;
+  }
 }
 
 .description {
