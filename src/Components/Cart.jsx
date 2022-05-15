@@ -10,19 +10,21 @@ const Cart = ({ onOrderedQuant, onReset, onShow }) => {
       <hr />
       <div className="cart-content">
         {onOrderedQuant ? (
-          <Product onOrderedQuant={onOrderedQuant} onReset={onReset} />
+          <>
+            <Product onOrderedQuant={onOrderedQuant} onReset={onReset} />
+            <button
+              className="checkout"
+              onClick={() => {
+                onReset();
+                onShow(false);
+              }}
+            >
+              checkout
+            </button>
+          </>
         ) : (
           "Your Cart Is Empty"
         )}
-        <button
-          className="checkout"
-          onClick={() => {
-            onReset();
-            onShow(false);
-          }}
-        >
-          checkout
-        </button>
       </div>
     </section>
   );

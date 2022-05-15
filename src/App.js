@@ -4,6 +4,7 @@ import { Container } from "@mui/material";
 import Navbar from "./Components/Navbar";
 import Gallery from "./Components/Gallery";
 import Description from "./Components/Description";
+import MobileGallery from "./Components/MobileGallery";
 
 function App() {
   const [quant, setQuant] = useState(0);
@@ -27,6 +28,7 @@ function App() {
         <Navbar onOrderedQuant={orderedQuant} onReset={resetQuant} />
         <section className="core">
           <Gallery />
+          <MobileGallery />
           <Description
             onQuant={quant}
             onAdd={addQuant}

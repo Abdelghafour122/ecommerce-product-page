@@ -35,7 +35,7 @@ const MobileGallery = () => {
   };
 
   return (
-    <section className="mobile-gallery">
+    <section className="mobile-gallery hide-in-desktop">
       <IconButton
         className="icon-button-prev"
         disableRipple

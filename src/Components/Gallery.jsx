@@ -34,29 +34,31 @@ const Gallery = () => {
   }, [currentImage]);
 
   return (
-    <section className="gallery">
-      <div className="image">
-        <img src={currentImage} alt="product-1" onClick={handleToggle} />
-      </div>
-      <BackdropGallery
-        handleClose={handleClose}
-        open={open}
-        currentPassedImage={currentPassedImage}
-      />
-      <div className="thumbnails">
-        {THUMBS.map((th, index) => {
-          return (
-            <img
-              key={index}
-              src={th}
-              alt="product-1"
-              onClick={() => {
-                handleClick(index);
-              }}
-            />
-          );
-        })}
-      </div>
+    <section className="gallery-holder hide-in-mobile">
+      <section className="gallery">
+        <div className="image">
+          <img src={currentImage} alt="product-1" onClick={handleToggle} />
+        </div>
+        <BackdropGallery
+          handleClose={handleClose}
+          open={open}
+          currentPassedImage={currentPassedImage}
+        />
+        <div className="thumbnails">
+          {THUMBS.map((th, index) => {
+            return (
+              <img
+                key={index}
+                src={th}
+                alt="product-1"
+                onClick={() => {
+                  handleClick(index);
+                }}
+              />
+            );
+          })}
+        </div>
+      </section>
     </section>
   );
 };
