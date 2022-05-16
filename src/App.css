@@ -272,6 +272,7 @@ header nav .right .cart button.checkout {
   text-transform: capitalize;
   font-weight: 700;
   font-size: 50px;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
