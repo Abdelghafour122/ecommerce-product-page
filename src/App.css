@@ -99,7 +99,32 @@ header nav .left ul {
 
 header nav .left ul button {
   padding: 0;
+  color: var(--d-grayish-blue);
   font-size: var(--p-fs);
+}
+
+header nav .left ul li {
+  position: relative;
+}
+
+header nav .left ul li::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--orange);
+  opacity: 0;
+  transition: 0.2s;
+}
+
+header nav .left ul li:hover::before {
+  opacity: 1;
+}
+
+header nav .left ul li:hover button {
+  color: var(--vd-blue);
 }
 
 header nav .right {
@@ -137,13 +162,13 @@ header nav .right svg {
 
 header nav .right .cart {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-75%);
-  box-shadow: 5px 5px 5px 5px #000;
+  box-shadow: 1px 7px 20px -7px var(--d-grayish-blue);
   z-index: 999;
   background-color: #fff;
-  width: 320px;
+  width: 355px;
   border-radius: 7px;
 }
 @media (max-width: 768px) {
@@ -152,7 +177,7 @@ header nav .right .cart {
     top: calc(100% + 30px + 20px);
     left: 0;
     transform: translateX(-80%);
-    box-shadow: 5px 5px 5px 5px #000;
+    box-shadow: 1px 7px 20px -7px var(--d-grayish-blue);
     z-index: 999;
     background-color: #fff;
     width: 80vw;
@@ -181,6 +206,7 @@ header nav .right .cart .cart-content {
   justify-content: center;
   gap: 20px;
   color: var(--d-grayish-blue);
+  min-height: 160px;
 }
 
 header nav .right .cart .product {
@@ -237,9 +263,13 @@ header nav .right .cart button.checkout {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 90%;
+  margin: 100px auto;
 }
 @media (max-width: 768px) {
   .core {
+    width: unset;
+    margin: unset;
     flex-direction: column;
   }
 }
@@ -250,10 +280,10 @@ header nav .right .cart button.checkout {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  gap: 25px;
 }
 @media (max-width: 768px) {
   .description {
-    gap: 25px;
     padding: 10px;
   }
 }
@@ -285,6 +315,7 @@ header nav .right .cart button.checkout {
 .description p.desc {
   color: var(--d-grayish-blue);
   font-weight: 500;
+  line-height: 1.7;
 }
 @media (max-width: 768px) {
   .description p.desc {
@@ -390,6 +421,7 @@ header nav .right .cart button.checkout {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  flex: 1;
 }
 
 .description .buttons .add-to-cart svg path {
