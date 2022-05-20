@@ -4,15 +4,29 @@ import logo from "../Pictures/logo.svg";
 import avatar from "../Pictures/image-avatar.png";
 import { Badge, IconButton } from "@mui/material";
 import Cart from "./Cart";
+import MobileLinksDrawer from "./MobileLinksDrawer";
 
 const Navbar = ({ onOrderedQuant, onReset }) => {
   const [showCart, setShowCart] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = (val) => {
+    setOpen(val);
+  };
+
   return (
     <header>
       <nav>
         <section className="left">
           <div className="imgs">
-            <img className="hide-in-desktop" src={menu} alt="icon-menu" />
+            <img
+              className="hide-in-desktop"
+              src={menu}
+              alt="icon-menu"
+              onClick={() => {
+                handleOpen(true);
+              }}
+            />
+            <MobileLinksDrawer onHandleOpen={handleOpen} onOpen={open} />
             <img src={logo} alt="logo" />
           </div>
           <div className="links hide-in-mobile">

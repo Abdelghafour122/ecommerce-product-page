@@ -66,7 +66,7 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
           onClick={handleClose}
           sx={{ color: "#fff", bgcolor: "transparent", alignSelf: "flex-end" }}
         >
-          <CloseIcon />
+          <CloseIcon fillColor={"#fff"} />
         </IconButton>
         <div className="image">
           <IconButton

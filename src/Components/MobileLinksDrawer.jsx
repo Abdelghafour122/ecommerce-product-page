@@ -1,41 +1,54 @@
 import { Drawer, IconButton } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import CloseIcon from "./Icons/CloseIcon";
 
-const MobileLinksDrawer = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = (val) => {
-    setOpen(val);
-  };
+const MobileLinksDrawer = ({ onOpen, onHandleOpen }) => {
   return (
     <Drawer
-      className="hide-in-desktop"
+      className="mobile-drawer hide-in-desktop"
       anchor="left"
       transitionDuration={400}
-      open={open}
+      open={onOpen}
       onClose={() => {
-        handleOpen(false);
+        onHandleOpen(false);
       }}
       sx={{
-        width: "300px",
         display: "flex",
         flexDirection: "column",
         padding: "30px",
         height: "100vh",
+        "& .css-4t3x6l-MuiPaper-root-MuiDrawer-paper": {
+          width: "65vw",
+        },
       }}
     >
       <section className="closing">
-        <IconButton>
-          <CloseIcon />
+        <IconButton
+          disableRipple
+          onClick={() => {
+            onHandleOpen(false);
+          }}
+        >
+          <CloseIcon fillColor={"#68707d"} />
         </IconButton>
       </section>
       <section className="mobile-links">
         <ul>
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <button>Collections</button>
+          </li>
+          <li>
+            <button>Men</button>
+          </li>
+          <li>
+            <button>Women</button>
+          </li>
+          <li>
+            <button>About</button>
+          </li>
+          <li>
+            <button>Contact</button>
+          </li>
         </ul>
       </section>
     </Drawer>

@@ -28,7 +28,12 @@ const Gallery = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const removeActivatedClass = (parent) => {
+    parent.childNodes.forEach((node) => {
+      node.childNodes[0].classList.contains("activated") &&
+        node.childNodes[0].classList.remove("activated");
+    });
+  };
   useEffect(() => {
     setCurrentPassedImage(currentImage);
   }, [currentImage]);
@@ -47,14 +52,18 @@ const Gallery = () => {
         <div className="thumbnails">
           {THUMBS.map((th, index) => {
             return (
-              <img
+              <div
+                className="img-holder"
                 key={index}
-                src={th}
-                alt="product-1"
-                onClick={() => {
+                onClick={(e) => {
                   handleClick(index);
+                  removeActivatedClass(e.currentTarget.parentNode);
+                  e.currentTarget.childNodes[0].classList.toggle("activated");
                 }}
-              />
+              >
+                <div className={`outlay ${index === 0 && "activated"}`}></div>
+                <img src={th} alt={`product-${index + 1}`} />
+              </div>
             );
           })}
         </div>
