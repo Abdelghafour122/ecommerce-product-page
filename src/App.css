@@ -27,9 +27,16 @@ button {
   background-color: unset;
 }
 
-.selected {
-  filter: grayscale(0.5);
-  border: 2px solid var(--orange);
+.activated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  border: 3px solid var(--orange);
+  border-radius: 10px;
+  background-color: #e3dfdfab;
 }
 
 @media (min-width: 769px) {
@@ -133,7 +140,6 @@ header nav .right {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  /* position: relative; */
   z-index: 998;
 }
 @media (max-width: 768px) {
@@ -493,18 +499,6 @@ header nav .right .cart button.checkout:hover {
     height: 75px;
     width: 75px;
   }
-}
-
-.activated {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-  border: 3px solid var(--orange);
-  border-radius: 10px;
-  background-color: #e3dfdfab;
 }
 
 .gallery .thumbnails img {
