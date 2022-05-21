@@ -488,16 +488,11 @@ header nav .right .cart button.checkout:hover {
   height: 90px;
   width: 90px;
 }
-.gallery .thumbnails .outlay {
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-  border: 3px solid var(--orange);
-  border-radius: 10px;
-  background-color: #e3dfdfab; */
+@media (max-width: 992px) {
+  .gallery .thumbnails .img-holder {
+    height: 75px;
+    width: 75px;
+  }
 }
 
 .activated {
@@ -546,6 +541,16 @@ header nav .right .cart button.checkout:hover {
   right: -21px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.gallery .backdrop .thumbnails {
+  position: relative;
+}
+
+.gallery .backdrop .thumbnails .img-holder-backd {
+  height: 75px;
+  width: 75px;
+  position: relative;
 }
 
 .gallery .backdrop .thumbnails img {

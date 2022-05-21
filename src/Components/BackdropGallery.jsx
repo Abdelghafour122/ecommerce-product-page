@@ -51,6 +51,13 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
     }
   };
 
+  const removeActivatedClass = (parent) => {
+    parent.childNodes.forEach((node) => {
+      node.childNodes[0].classList.contains("activated") &&
+        node.childNodes[0].classList.remove("activated");
+    });
+  };
+
   return (
     <Backdrop
       className="backdrop"
@@ -98,14 +105,22 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
         <div className="thumbnails">
           {THUMBS.map((th, index) => {
             return (
-              <img
+              <div
+                className="img-holder-backd"
                 key={index}
-                src={th}
-                alt="product-1"
-                onClick={() => {
+                onClick={(e) => {
                   handleClick(index);
+                  removeActivatedClass(e.currentTarget.parentNode);
+                  e.currentTarget.childNodes[0].classList.toggle("activated");
                 }}
-              />
+              >
+                <div
+                  className={`outlay ${
+                    index === currentPassedImageIndex && "activated"
+                  }`}
+                ></div>
+                <img src={th} alt={`product-${index + 1}`} />
+              </div>
             );
           })}
         </div>
