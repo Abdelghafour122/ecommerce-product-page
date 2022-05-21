@@ -29,6 +29,7 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
 
   const handleClick = (index = null) => {
     setBackdropImage(IMAGES[index]);
+    setCurrentPassedImageIndex(index);
   };
 
   const handleIncrement = () => {
@@ -79,7 +80,10 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
           <IconButton
             className="icon-button-prev"
             disableRipple
-            onClick={handleDecrement}
+            onClick={() => {
+              handleDecrement();
+              removeActivatedClass(document.querySelector(".thumbnails"));
+            }}
             sx={{
               height: "42px",
               width: "42px",
@@ -91,7 +95,10 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
           <IconButton
             className="icon-button-next"
             disableRipple
-            onClick={handleIncrement}
+            onClick={() => {
+              handleIncrement();
+              removeActivatedClass(document.querySelector(".thumbnails"));
+            }}
             sx={{
               height: "42px",
               width: "42px",
@@ -100,7 +107,11 @@ const BackdropGallery = ({ open, handleClose, currentPassedImage }) => {
           >
             <NextIcon />
           </IconButton>
-          <img src={backdropImage} alt="selected-product" />
+          <img
+            src={backdropImage}
+            alt="selected-product"
+            style={{ cursor: "auto" }}
+          />
         </div>
         <div className="thumbnails">
           {THUMBS.map((th, index) => {
