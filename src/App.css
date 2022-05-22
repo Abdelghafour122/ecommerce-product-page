@@ -591,6 +591,10 @@ header nav .right .cart button.checkout:hover {
   transform: translateY(-50%);
 }
 
+.mobile-drawer {
+  width: "65vw";
+}
+
 .mobile-drawer .closing {
   padding: 25px;
 }
