@@ -215,6 +215,10 @@ header nav .right .cart .cart-content {
   min-height: 160px;
 }
 
+header nav .right .cart .cart-content p.empty {
+  font-weight: 700;
+}
+
 header nav .right .cart .product {
   display: flex;
   align-items: center;

@@ -47,7 +47,11 @@ function App() {
           Frontend Mentor
         </a>
         . Coded by{" "}
-        <a href="https://github.com/Abdelghafour122" rel="noreferrer">
+        <a
+          href="https://github.com/Abdelghafour122"
+          target="_blank"
+          rel="noreferrer"
+        >
           Abdelghafour122
         </a>
         .

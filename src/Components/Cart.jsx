@@ -23,7 +23,7 @@ const Cart = ({ onOrderedQuant, onReset, onShow }) => {
             </button>
           </>
         ) : (
-          "Your Cart Is Empty"
+          <p className="empty">Your Cart Is Empty</p>
         )}
       </div>
     </section>
